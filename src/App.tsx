@@ -6,7 +6,8 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
-
+import Registration from './pages/Resgistration'
+import Auth from "./pages/Auth"
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -21,6 +22,8 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/programs" element={<Programs />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/registration" element={<Registration />} />
+              <Route path="/auth" element={<Auth />} />
             </Routes>
           </main>
           <Footer />
