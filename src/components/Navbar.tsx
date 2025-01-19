@@ -9,6 +9,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Programs", path: "/programs" },
+    { name: "Register", path: "/register" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -39,6 +40,12 @@ const Navbar = () => {
                 className="bg-karate-primary text-white hover:bg-karate-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 Join Now
+              </Link> 
+              <Link
+                to="/auth"
+                className="bg-karate-primary text-white hover:bg-karate-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Login
               </Link>
             </div>
           </div>
