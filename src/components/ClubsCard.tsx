@@ -1,5 +1,4 @@
 import { Mail, Phone } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 
 interface Coach {
     name: string;
@@ -20,7 +19,6 @@ interface KarateClubProps {
 const KarateClubCard = ({
     karateprops
 }: { karateprops: KarateClubProps }) => {
-    const navigate = useNavigate();
     return (
         <div  className="max-w-xl w-full h-full bg-white rounded-lg shadow-lg hover:shadow-xl overflow-hidden">
             <a href={karateprops.site}>
