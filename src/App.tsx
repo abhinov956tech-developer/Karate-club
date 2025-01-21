@@ -6,9 +6,9 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
-import Registration from './pages/Resgistration'
 import Auth from "./pages/Auth"
 import { Club } from "./pages/Club";
+import { Membership } from "./pages/Page";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -23,7 +23,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/programs" element={<Programs />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/register" element={<Registration />} />
+              <Route path="/register" element={<Membership />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/club" element={<Club />} />
             </Routes>

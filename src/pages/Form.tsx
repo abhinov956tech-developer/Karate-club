@@ -1,5 +1,4 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
-
 // Type definitions for form data and errors
 interface FormData {
   name: string;
@@ -29,9 +28,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         ref={ref}
-        className={`h-10 px-3 py-2 rounded-md border border-gray-300 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
-          error ? 'border-red-500' : ''
-        } ${className}`}
+        className={`h-10 px-3 py-2 rounded-md border border-gray-300 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${error ? 'border-red-500' : ''
+          } ${className}`}
         {...props}
       />
     );
@@ -49,9 +47,8 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
     return (
       <select
         ref={ref}
-        className={`h-10 px-3 py-2 rounded-md border border-gray-300 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors appearance-none bg-white ${
-          error ? 'border-red-500' : ''
-        } ${className}`}
+        className={`h-10 px-3 py-2 rounded-md border border-gray-300 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors appearance-none bg-white ${error ? 'border-red-500' : ''
+          } ${className}`}
         {...props}
       >
         {children}
@@ -64,17 +61,27 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
 };
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className = '', ...props }, ref) => {
-    return (
-      <button
-        ref={ref}
-        className={`px-4 py-2 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors ${className}`}
-        {...props}
-      />
-    );
-  }
-);
+const Button: React.FC<ButtonProps> = ({ children, className = '', ...props }) => {
+  return (
+    <button
+      className={`
+        relative overflow-hidden group px-6 py-3 rounded-lg font-medium
+        before:absolute before:inset-0
+        before:bg-gradient-to-r before:from-blue-400 before:via-purple-500 before:to-blue-400
+        before:bg-[length:200%_100%]
+        before:animate-[gradient_8s_linear_infinite]
+        hover:before:bg-[length:300%_100%]
+        before:transition-all before:duration-500
+        ${className}
+      `}
+      {...props}
+    >
+      <span className="relative z-10 text-white">
+        {children}
+      </span>
+    </button>
+  );
+};
 
 type CardProps = {
   className?: string;
@@ -180,8 +187,8 @@ const KarateRegistrationForm: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 ">
-      
+    <div className="justify-center p-4 ">
+
       <Card className="w-full max-w-2xl">
         <CardHeader>
           <h2 className="text-center text-2xl font-medium relative pb-2">
@@ -220,11 +227,11 @@ const KarateRegistrationForm: React.FC = () => {
             </div>
 
             <Button
-              type="submit"
-              className="w-full text-white bg-gradient-to-r from-blue-400 to-purple-500 hover:from-purple-500 hover:to-blue-400 transition-all duration-300"
+              className="w-full text-white bg-gradient-to-r from-blue-400 to-purple-500 hover:from-purple-500 hover:to-blue-400 transition-all duration-300 bg-[length:200%_200%] hover:animate-gradient360"
             >
               Submit
             </Button>
+
           </form>
         </CardContent>
       </Card>
