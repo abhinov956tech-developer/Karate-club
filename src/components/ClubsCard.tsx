@@ -1,4 +1,5 @@
 import { Mail, Phone } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface Coach {
     name: string;
@@ -13,16 +14,18 @@ interface KarateClubProps {
     phone: string;
     email: string;
     coach: Coach;
+    site?: string
 }
 
 const KarateClubCard = ({
     karateprops
 }: { karateprops: KarateClubProps }) => {
+    const navigate = useNavigate();
     return (
-        <div className="max-w-xl w-full bg-white rounded-lg shadow-lg hover:shadow-xl overflow-hidden">
-            {/* Card Header */}
-            <div className="p-6 border-b border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-800">{karateprops.clubName}</h2>
+        <div  className="max-w-xl w-full h-full bg-white rounded-lg shadow-lg hover:shadow-xl overflow-hidden">
+            <a href={karateprops.site}>
+            <div className="p-6 h-36 border-b border-gray-200">
+                <h2 className="text-2xl h-16 font-bold text-gray-800">{karateprops.clubName}</h2>
                 <p className="text-gray-600 mt-1">{karateprops.address}</p>
             </div>
 
@@ -47,18 +50,9 @@ const KarateClubCard = ({
 
                 {/* Coach Profile */}
                 <div className="space-y-2">
-                    <h3 className="text-lg font-semibold text-gray-800">Head Coach</h3>
                     <div className="flex gap-4">
-                        {karateprops.coach.imageUrl && (
-                            <img
-                                src={karateprops.coach.imageUrl}
-                                alt={karateprops.coach.name}
-                                className="w-20 h-20 rounded-full object-cover"
-                            />
-                        )}
+                        
                         <div>
-                            <p className="font-medium text-gray-800">{karateprops.coach.name}</p>
-                            <p className="text-gray-600">{karateprops.coach.rank}</p>
                             <div className="mt-2">
                                 <p className="text-sm font-medium text-gray-700">Achievements:</p>
                                 <ul className="list-disc list-inside text-sm text-gray-600 mt-1">
@@ -73,6 +67,8 @@ const KarateClubCard = ({
 
                 {/* Schedule */}
             </div>
+            </a>
+            {/* Card Header */}
         </div>
     );
 };

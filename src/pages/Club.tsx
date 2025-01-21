@@ -2,21 +2,18 @@ import KarateClubCard from "../components/ClubsCard"
 export function Club(){
     const clubDataArray = [
         {
-            clubName: "Shotokan Karate Academy",
-            address: "123 Martial Arts Way, Cityville, ST 12345",
-            phone: "(555) 123-4567",
-            email: "info@shotokanacademy.com",
-            socialLinks: {
-              facebook: "https://facebook.com/shotokanacademy",
-              instagram: "https://instagram.com/shotokanacademy",
-            },
+            clubName: "South Dibrugarh Karate Do Academy",
+            address: "Sonowal Kachari Sanskritik Bhawan, Dibrugarh",
+            phone: "7002532446",
+            email: "contact@sdka.com",
+            site:"https://southdibrugarhkarateacademy.vercel.app/src/index.html",
             coach: {
               name: "Sensei John Smith",
               rank: "7th Dan Black Belt",
               achievements: [
-                "World Championship Gold Medalist 2020",
-                "National Coach of the Year 2022",
-                "30+ years teaching experience",
+                "Multiple State Champions",
+                "9+ Black Belt Holders",
+                "Numerous Competition Medals",
               ],
               imageUrl: "/api/placeholder/150/150",
             },
@@ -274,7 +271,7 @@ export function Club(){
     return <div className="flex justify-center mx-auto p-8">
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 grid-rows-auto">
             {clubDataArray.map((items:any)=>(
-            <div className="h-auto w-full">
+            <div className="max-h-xl w-full">
                 <KarateClubCard karateprops={items}/>
             </div>
         ))}
