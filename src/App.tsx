@@ -8,7 +8,7 @@ import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
 import Auth from "./pages/Auth"
 import { Club } from "./pages/Club";
-import { Membership } from "./pages/Page";
+import { Membership } from "./pages/Registration";
 const queryClient = new QueryClient();
 
 const App = () => (
