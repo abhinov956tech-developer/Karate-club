@@ -180,7 +180,8 @@ const KarateRegistrationForm: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-blue-400 to-purple-500">
+    <div className="min-h-screen flex items-center justify-center p-4 ">
+      
       <Card className="w-full max-w-2xl">
         <CardHeader>
           <h2 className="text-center text-2xl font-medium relative pb-2">
