@@ -1,5 +1,5 @@
 import MembershipBenefits from "./Membership";
-import KarateRegistrationForm from "./Resgistration";
+import KarateRegistrationForm from "./Form";
 export function Membership(){
     return <div className=" flex flex-col pb-16 items-center bg-gradient-to-r from-blue-400 to-purple-500">
         <MembershipBenefits/>
