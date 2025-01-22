@@ -5,16 +5,23 @@ import axios from "axios";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Handle newsletter subscription
-    axios.post('http://3000/subscriber/subscribe',{
-      email:email,
-      name:"Dummy"
-    })
-    setEmail("");
-  };
+  const [name,setname] = useState("");
+  function handleSubmit(){
+    if(email!=""){
+      try{
+        axios.post('http://localhost:3000/subscriber/subscribe',{
+          email:email,
+          name:name
+        }).then((response:any)=>{
+          console.log(response.data)
+        })
+        setEmail('');
+        setname('');
+      }catch(error){
+        console.error('Error while',error);
+      }
+    }
+  }
 
   return (
     <footer className="bg-karate-dark text-white">
@@ -24,7 +31,6 @@ const Footer = () => {
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-2">Subscribe to Our Newsletter</h2>
             <p className="text-gray-300 mb-6">Stay updated with the latest news, events, and achievements</p>
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto flex gap-2">
               <input
                 type="email"
                 value={email}
@@ -33,13 +39,21 @@ const Footer = () => {
                 className="flex-1 px-4 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setname(e.target.value)}
+                placeholder="Enter name"
+                className="flex-1 px-4 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
               <button
+               onClick={handleSubmit}
                 type="submit"
                 className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 Subscribe
               </button>
-            </form>
           </div>
         </div>
       </div>
