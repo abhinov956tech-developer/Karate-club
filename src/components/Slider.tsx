@@ -6,15 +6,15 @@ const ImageSlider = () => {
   
   const slides = [
     {
-      url: "https://dibru.ac.in/assets/image/Centre-for-Computer-Science-and-Application-banner.jpg",
+      url: "./public/slide_1.jpeg",
       alt: "Slide 1"
     },
     {
-      url: "https://admin.ccsaalumni.in/storage/sliders/VPn3DiUMcBRipEQv7JgCzcanPBcLNosV9FxeNcVY.jpg",
+      url: "./public/slide_2.jpeg",
       alt: "Slide 2"
     },
     {
-      url: "https://admin.ccsaalumni.in/storage/sliders/KxwzEcGaMHMh07JrEkeouX60UPsjXlpDzr9h4PZG.jpg",
+      url: "./public/slide_1.jpeg",
       alt: "Slide 3"
     }
   ];
