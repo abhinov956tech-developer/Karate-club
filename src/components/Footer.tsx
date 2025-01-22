@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -8,7 +9,10 @@ const Footer = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle newsletter subscription
-    console.log("Newsletter subscription:", email);
+    axios.post('http://3000/subscriber/subscribe',{
+      email:email,
+      name:"Dummy"
+    })
     setEmail("");
   };
 
