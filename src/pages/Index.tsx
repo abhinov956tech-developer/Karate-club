@@ -1,39 +1,13 @@
 // Export pages
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import ImageSlider from "../components/Slider";
 
 const Index = () => {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-4.0.0&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center">
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-            Dibrugarh District Karate Association
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl animate-fade-in">
-            Empowering Martial Arts, Building Champions
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
-            <Link
-              to="/contact"
-              className="bg-karate-primary hover:bg-karate-primary/90 text-white px-8 py-3 rounded-md text-lg font-medium inline-flex items-center gap-2 transition-colors"
-            >
-              Join Now <ArrowRight className="h-5 w-5" />
-            </Link>
-            <Link
-              to="/about"
-              className="bg-white hover:bg-gray-100 text-karate-dark px-8 py-3 rounded-md text-lg font-medium transition-colors"
-            >
-              Learn More
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ImageSlider/>
 
       {/* About Section */}
       <section className="py-20 bg-karate-light">
