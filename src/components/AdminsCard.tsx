@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone, Calendar, Award } from "lucide-react";
+import { Mail, Phone, Calendar } from "lucide-react";
 
 // Leadership data type
 interface Leader {
