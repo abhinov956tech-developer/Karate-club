@@ -1,4 +1,5 @@
 import KarateClubCard from "../components/ClubsCard"
+import { MapPin } from 'lucide-react';
 export function Club(){
     const clubDataArray = [
         {
@@ -268,13 +269,38 @@ export function Club(){
           ],
         },
       ];
-    return <div className="flex justify-center mx-auto p-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 grid-rows-auto">
-            {clubDataArray.map((items:any)=>(
-            <div className="max-h-xl w-full">
-                <KarateClubCard karateprops={items}/>
-            </div>
-        ))}
+      return (
+        <div className="container mx-auto px-4 py-12 bg-washi">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-karate-black mb-4 font-japanese relative inline-block">
+              空手道場
+              <span className="block text-lg text-karate-accent mt-2">Karate Dojos</span>
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-karate-red" />
+            </h1>
+            <p className="text-karate-accent max-w-2xl mx-auto mt-4">
+              Discover authentic karate dojos near you. Each dojo offers unique training experiences
+              under the guidance of experienced senseis.
+            </p>
+          </div>
+    
+          <div className="flex items-center justify-center mb-8">
+            <MapPin className="text-karate-red mr-2" />
+            <span className="text-karate-accent">Showing dojos in your area</span>
+          </div>
+    
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {clubDataArray.map((items, index) => (
+              <div 
+                key={index}
+                className="animate-smooth-appear"
+                style={{
+                  animationDelay: `${index * 0.1}s`
+                }}
+              >
+                <KarateClubCard karateprops={items} />
+              </div>
+            ))}
+          </div>
         </div>
-    </div>
-}
+      );
+    }
