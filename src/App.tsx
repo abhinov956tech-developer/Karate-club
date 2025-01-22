@@ -27,8 +27,8 @@ const App = () => (
               <Route path="/register" element={<Membership />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/club" element={<Club />} />
-              <Route path="/leader" element={<LeadershipCards />} />
             </Routes>
+            <LeadershipCards />
           </main>
           <Footer />
         </div>
