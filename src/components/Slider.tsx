@@ -6,11 +6,11 @@ const ImageSlider = () => {
   
   const slides = [
     {
-      url: "/slide_1.jpg",
+      url: "/slide_1.jpeg",
       alt: "Slide 1"
     },
     {
-      url: "/slide_2.jpg",
+      url: "/slide_2.jpeg",
       alt: "Slide 2"
     },
     {
