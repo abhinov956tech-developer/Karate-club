@@ -2,6 +2,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import ImageSlider from "../components/Slider";
+import LeadershipCards from "../components/AdminsCard";
 
 const Index = () => {
   return (
@@ -67,6 +68,7 @@ const Index = () => {
           </Link>
         </div>
       </section>
+<LeadershipCards/>
     </div>
   );
 };
