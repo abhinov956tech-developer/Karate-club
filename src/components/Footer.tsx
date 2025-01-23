@@ -59,92 +59,82 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="space-y-4">
-            <h3 className="text-3xl font-bold">DDKA</h3>
-            <p className="text-gray-300 leading-relaxed">
-              Empowering Martial Arts, Building Champions in Dibrugarh District. Join us in our journey of discipline, respect, and excellence.
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
+          <div className="space-y-4 text-center sm:text-left">
+            <h3 className="text-2xl sm:text-3xl font-bold">DDKA</h3>
+            <p className="text-xs sm:text-base text-gray-300 leading-relaxed">
+              Empowering Martial Arts, Building Champions in Dibrugarh District.
             </p>
           </div>
           
-          <div className="space-y-4">
-            <h4 className="text-xl font-semibold">Quick Links</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors hover:translate-x-1 inline-block">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/programs" className="text-gray-300 hover:text-white transition-colors hover:translate-x-1 inline-block">
-                  Programs
-                </Link>
-              </li>
-              <li>
-                <Link to="/events" className="text-gray-300 hover:text-white transition-colors hover:translate-x-1 inline-block">
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors hover:translate-x-1 inline-block">
-                  Contact
-                </Link>
-              </li>
+          <div className="space-y-4 text-center sm:text-left">
+            <h4 className="text-lg sm:text-xl font-semibold">Quick Links</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              {["About", "Programs", "Events", "Contact"].map((link) => (
+                <li key={link}>
+                  <Link 
+                    to={`/${link.toLowerCase()}`} 
+                    className="text-xs sm:text-base text-gray-300 hover:text-white transition-colors hover:translate-x-1 inline-block"
+                  >
+                    {link} {link === "About" ? "Us" : ""}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           
-          <div className="space-y-4">
-            <h4 className="text-xl font-semibold">Contact Info</h4>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3 group">
-                <MapPin className="h-5 w-5 text-blue-500" />
-                <span className="text-gray-300 group-hover:text-white transition-colors">
-                  123 Main Street, Dibrugarh, Assam - 786001
+          <div className="space-y-4 text-center sm:text-left">
+            <h4 className="text-lg sm:text-xl font-semibold">Contact</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              <li className="flex flex-col sm:flex-row items-center gap-2 justify-center sm:justify-start">
+                <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-blue-500" />
+                <span className="text-xs sm:text-base text-gray-300">
+                  Dibrugarh, Assam - 786001
                 </span>
               </li>
-              <li className="flex items-center gap-3 group">
-                <Phone className="h-5 w-5 text-blue-500" />
-                <span className="text-gray-300 group-hover:text-white transition-colors">
+              <li className="flex flex-col sm:flex-row items-center gap-2 justify-center sm:justify-start">
+                <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-blue-500" />
+                <span className="text-xs sm:text-base text-gray-300">
                   +91 XXXXX XXXXX
                 </span>
               </li>
-              <li className="flex items-center gap-3 group">
-                <Mail className="h-5 w-5 text-blue-500" />
-                <span className="text-gray-300 group-hover:text-white transition-colors">
+              <li className="flex flex-col sm:flex-row items-center gap-2 justify-center sm:justify-start">
+                <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-blue-500" />
+                <span className="text-xs sm:text-base text-gray-300">
                   contact@ddka.org
                 </span>
               </li>
             </ul>
           </div>
           
-          <div className="space-y-4">
-            <h4 className="text-xl font-semibold">Connect With Us</h4>
-            <p className="text-gray-300 mb-4">Follow us on social media for updates and inspiration</p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-white transition-colors transform hover:scale-110">
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors transform hover:scale-110">
-                <Instagram className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors transform hover:scale-110">
-                <Youtube className="h-6 w-6" />
-              </a>
+          <div className="space-y-4 text-center sm:text-left">
+            <h4 className="text-lg sm:text-xl font-semibold">Connect</h4>
+            <p className="text-xs sm:text-base text-gray-300 mb-4">Follow us on social media</p>
+            <div className="flex justify-center sm:justify-start space-x-4">
+              {[Facebook, Instagram, Youtube].map((Icon, index) => (
+                <a 
+                  key={index} 
+                  href="#" 
+                  className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
+                >
+                  <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-700">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-300">
-              © {new Date().getFullYear()} Dibrugarh District Karate Association. All rights reserved.
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-700">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <p className="text-xs sm:text-base text-gray-300 order-2 sm:order-1">
+              © {new Date().getFullYear()} Dibrugarh District Karate Association
             </p>
-            <div className="flex gap-6">
-              <Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 order-1 sm:order-2 mb-4 sm:mb-0">
+              <Link to="/privacy" className="text-xs sm:text-base text-gray-300 hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-gray-300 hover:text-white transition-colors">
+              <Link to="/terms" className="text-xs sm:text-base text-gray-300 hover:text-white transition-colors">
                 Terms of Service
               </Link>
             </div>
