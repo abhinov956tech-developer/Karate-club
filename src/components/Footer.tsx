@@ -9,7 +9,7 @@ const Footer = () => {
   function handleSubmit(){
     if(email!=""){
       try{
-        axios.post('http://localhost:3000/subscriber/subscribe',{
+        axios.post('https://newsletter-api-xi.vercel.app/subscriber/subscribe',{
           email:email,
           name:name
         }).then((response:any)=>{
