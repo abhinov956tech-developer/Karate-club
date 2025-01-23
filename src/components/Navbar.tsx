@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: "Clubs", path: "/club" },
     { name: "Register", path: "/register" },
     { name: "Contact", path: "/contact" },
+    { name: "Login", path: "/auth" },
   ];
 
   return (
@@ -44,12 +45,12 @@ const Navbar = () => {
               >
                 Join Now
               </Link> 
-              <Link
+             {/* <Link
                 to="/auth"
                 className="bg-karate-primary text-white hover:bg-karate-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 Login
-              </Link>
+              </Link>*/}
             </div>
           </div>
 
@@ -86,6 +87,7 @@ const Navbar = () => {
             >
               Join Now
             </Link>
+            
           </div>
         </div>
       )}
