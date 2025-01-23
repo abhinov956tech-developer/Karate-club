@@ -9,7 +9,7 @@ import Contact from "./pages/Contact";
 import Auth from "./pages/Auth"
 import { Club } from "./pages/Club";
 import { Membership } from "./pages/Registration";
-import LeadershipCards from "./components/AdminsCard";
+//import LeadershipCards from "./components/AdminsCard";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,7 +28,6 @@ const App = () => (
               <Route path="/auth" element={<Auth />} />
               <Route path="/club" element={<Club />} />
             </Routes>
-            <LeadershipCards />
           </main>
           <Footer />
         </div>
